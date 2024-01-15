@@ -13,3 +13,4 @@ public:
         return test;
     }
 };
+// so you can get index and subtract number from the value, then see if it's in the hashmap
