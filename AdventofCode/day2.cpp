@@ -4,6 +4,7 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <vector>
 
 int main() {
 	std::ifstream inFile; 
@@ -13,6 +14,8 @@ int main() {
 	std::stringstream ss;
 	int found;
 	std::string temp;
+
+	std::vector<int> numbers;
 
 	while (std::getline(inFile, line))
 	{
@@ -24,12 +27,16 @@ int main() {
 
 			if(std::stringstream(temp) >> found)
 			{
-				std::cout << found << " ";
+				// std::cout << found << " ";
+				numbers.push_back(found);
+				std::cout << numbers.size() << std::endl;
 			}
 
 		}
+		// need to clear the stringstream buffer
 		ss.str("");
 		ss.clear();
+		numbers.clear();
 		// std::cout << line << std::endl;	
 	}
 }
